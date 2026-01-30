@@ -1,0 +1,15 @@
+[System]
+Version=2.2
+SystemType=SingleProcessorSystem
+DAQService=DsDAQ
+DsDAQBackground=1
+Status=Start
+File=lft_model_sweep_10_21_25.rta
+RTP=Master
+
+[Master]
+Type=DS1202
+State=Enabled
+ServiceID=1
+TraceFile=lft_model_sweep_10_21_25.trc
+ID=2FE1D4F8-9347-42EA-AEFA-415491DB0EA0

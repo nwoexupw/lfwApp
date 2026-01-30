@@ -1,0 +1,3033 @@
+-- ****************************************************************************
+-- 
+--  Trace file: LFT_model_Sweep_10_21_25.trc
+-- 
+--  RTI1202 25.1 (02-May-2025)
+--  Thu Jan 22 12:14:50 2026
+-- 
+--  Copyright 2026, dSPACE GmbH. All rights reserved.
+-- 
+-- ****************************************************************************
+-- 
+--  Used options:
+--    TRCGenerateVirtualBlocks      = 0
+--    TRCGenerateLabels             = 0
+--    TRCGenerateStates             = 0
+--    TRCGenerateDerivatives        = 0
+--    TRCGenerateParamValues        = 0
+--    TRCGenerateApplicationKeyword = 0
+--    TRCOnlyGlobals                = 0
+--    TRCIsOmitVdOn                 = 0
+-- 
+--  Trace file format: 3
+-- ******** Keywords **********************************************************
+-- _application "LFT_model_Sweep_10_21_25.map"
+_author      "RTI1202 25.1 (02-May-2025)"
+_description ""
+_gendate     "01/22/2026 12:14:51"
+_genname     "RTI"
+_genversion  "25.1"
+_model       "LFT_model_Sweep_10_21_25"
+
+_floating_point_type(64,IEEE)
+_integer_type(32)
+
+sampling_period[0]
+{
+    alias:     "HostService"
+    increment: 0.001
+    unit:      "s"
+    value:     0.001
+}
+
+struct LFT_model_Sweep_10_21_25_struct_KSr0ZktrmB6JvprMbx5LQF
+{
+    array-incr: 8
+}
+
+    structField0
+    {
+        alias: "max"
+        offs:  0
+        type:  float(64,IEEE)
+    }
+
+
+endstruct
+
+struct LFT_model_Sweep_10_21_25_struct_pHyZfrOdFMVsG1RQl0JmND
+{
+    array-incr: 24
+}
+
+    structField0
+    {
+        alias: "Forcemax"
+        offs:  0
+        type:  float(64,IEEE)
+    }
+
+    structField1
+    {
+        alias: "POSmax"
+        offs:  8
+        type:  float(64,IEEE)
+    }
+
+    structField2
+    {
+        alias: "POSmin"
+        offs:  16
+        type:  float(64,IEEE)
+    }
+
+
+endstruct
+
+struct LFT_model_Sweep_10_21_25_struct_51Gh2Mj8fMlXTwAtgB5ETG
+{
+    array-incr: 16
+}
+
+    structField0
+    {
+        alias: "v2i"
+        offs:  0
+        type:  float(64,IEEE)
+    }
+
+    structField1
+    {
+        alias: "gain"
+        offs:  8
+        type:  float(64,IEEE)
+    }
+
+
+endstruct
+
+struct LFT_model_Sweep_10_21_25_struct_NLRDuVWYR7htA7PonmziCF
+{
+    array-incr: 24
+}
+
+    structField0
+    {
+        alias: "k"
+        offs:  0
+        type:  float(64,IEEE)
+    }
+
+    structField1
+    {
+        alias: "b"
+        offs:  8
+        type:  float(64,IEEE)
+    }
+
+    structField2
+    {
+        alias: "s"
+        offs:  16
+        type:  float(64,IEEE)
+    }
+
+
+endstruct
+
+typedef LFT_model_Sweep_10_21_25_ArrayDT0_3 float(64,IEEE) [3]
+
+typedef LFT_model_Sweep_10_21_25_ArrayDT0_17 float(64,IEEE) [17]
+
+typedef LFT_model_Sweep_10_21_25_ArrayDT0_30 float(64,IEEE) [30]
+
+currentTime
+{
+    addr:  0x48047148
+    alias: "currentTime"
+    desc:  "Current simulation time. Increments with execution of Timer Task 1."
+    flags: READONLY
+    type:  float(64,IEEE)*
+    unit:  "s"
+}
+
+p_msg_last_error_no
+{
+    addr:  0x48044bb4
+    alias: "errorNumber"
+    desc:  "Error number of last error message (zero if no error)."
+    flags: READONLY
+    type:  uint(32)*
+    unit:  "-"
+}
+
+finalTime
+{
+    addr:  0x4804714c
+    alias: "finalTime"
+    desc:  "Simulation stop time. When reached, simState switches to STOP."
+    flags: READONLY
+    type:  float(64,IEEE)*
+    unit:  "s"
+}
+
+modelStepSize
+{
+    addr:  0x48047150
+    alias: "modelStepSize"
+    desc:  "Fixed step size of the model, sample time of Timer Task 1."
+    flags: READONLY
+    type:  float(64,IEEE)
+    unit:  "s"
+}
+
+simState
+{
+    addr:  0x48046788
+    alias: "simState"
+    desc:  "Simulation state: STOP=0 RUN=2"
+    type:  int(32)
+    unit:  "-"
+}
+
+p_dsts_sum_of_reset_time
+{
+    addr:  0x48044bb0
+    alias: "sumOfResetTime"
+    desc:  "Internal variable for summing up reset time."
+    flags: HIDDEN|READONLY
+    type:  float(64,IEEE)*
+    unit:  "s"
+}
+
+group "Model Root"
+
+    group " Electric Power, Watt"
+    {
+        block: "Outport"
+    }
+
+        p_5_LFT_model_Sweep_10_21_25_real_T_0[11]
+        {
+            addr:  0x48047140
+            alias: "In1"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group " Use Draft force\n(GUI switch)"
+    {
+        block: "Gain"
+    }
+
+        p_1_LFT_model_Sweep_10_21_25_real_T_5[12]
+        {
+            addr:  0x48047134
+            alias: "Gain"
+            flags: PARAM
+            type:  float(64,IEEE)*
+        }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[13]
+        {
+            addr:  0x48047118
+            alias: "Out1"
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group " Use Feedbackward\n(GUI switch)"
+    {
+        block: "Gain"
+    }
+
+        p_1_LFT_model_Sweep_10_21_25_real_T_5[10]
+        {
+            addr:  0x48047134
+            alias: "Gain"
+            flags: PARAM
+            type:  float(64,IEEE)*
+        }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[10]
+        {
+            addr:  0x48047118
+            alias: "Out1"
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group " Use Feedforward\n(GUI switch)"
+    {
+        block: "Gain"
+    }
+
+        p_1_LFT_model_Sweep_10_21_25_real_T_5[9]
+        {
+            addr:  0x48047134
+            alias: "Gain"
+            flags: PARAM
+            type:  float(64,IEEE)*
+        }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[9]
+        {
+            addr:  0x48047118
+            alias: "Out1"
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group " Use Mag cancellation\n(GUI switch)"
+    {
+        block: "Gain"
+    }
+
+        p_1_LFT_model_Sweep_10_21_25_real_T_5[13]
+        {
+            addr:  0x48047134
+            alias: "Gain"
+            flags: PARAM
+            type:  float(64,IEEE)*
+        }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[16]
+        {
+            addr:  0x48047118
+            alias: "Out1"
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group " Use Sweep\n(GUI switch)"
+    {
+        block: "Gain"
+    }
+
+        p_1_LFT_model_Sweep_10_21_25_real_T_5[19]
+        {
+            addr:  0x48047134
+            alias: "Gain"
+            flags: PARAM
+            type:  float(64,IEEE)*
+        }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[24]
+        {
+            addr:  0x48047118
+            alias: "Out1"
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "Accelerometer"
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[50]
+        {
+            addr:  0x48047118
+            alias: "Accelerometer Acceleration, m/s^2"
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[49]
+        {
+            addr:  0x48047118
+            alias: "Accelerometer Voltage, V"
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+        group "Acc Button"
+        {
+            block: "Constant"
+        }
+
+            p_1_LFT_model_Sweep_10_21_25_real_T_5[39]
+            {
+                addr:  0x48047134
+                alias: "Value"
+                flags: PARAM
+                type:  float(64,IEEE)*
+            }
+
+        endgroup
+
+        group "Accelerometer"
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[51]
+            {
+                addr:  0x48047118
+                alias: "ADC"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+        endgroup
+
+        group "Data Store\nMemory"
+        {
+            block: "DataStoreMemory"
+        }
+
+            p_1_LFT_model_Sweep_10_21_25_real_T_5[40]
+            {
+                addr:  0x48047134
+                alias: "InitialValue"
+                flags: PARAM
+                type:  float(64,IEEE)*
+            }
+
+        endgroup
+
+        group "Gain"
+        {
+            block: "Gain"
+        }
+
+            p_1_LFT_model_Sweep_10_21_25_real_T_5[38]
+            {
+                addr:  0x48047134
+                alias: "Gain"
+                flags: PARAM
+                type:  float(64,IEEE)*
+            }
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[50]
+            {
+                addr:  0x48047118
+                alias: "Out1"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+        endgroup
+
+        group "Offset Voltage, V"
+        {
+            block: "DataStoreRead"
+        }
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[48]
+            {
+                addr:  0x48047118
+                alias: "Out1"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+        endgroup
+
+        group "Sum"
+        {
+            block: "Sum"
+        }
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[49]
+            {
+                addr:  0x48047118
+                alias: "Out1"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+        endgroup
+
+        group "Transfer Fcn"
+        {
+            block: "TransferFcn"
+        }
+
+            p_1_LFT_model_Sweep_10_21_25_real_T_5[36]
+            {
+                addr:  0x48047134
+                alias: "A"
+                flags: PARAM
+                type:  float(64,IEEE)*
+            }
+
+            p_1_LFT_model_Sweep_10_21_25_real_T_5[37]
+            {
+                addr:  0x48047134
+                alias: "C"
+                flags: PARAM
+                type:  float(64,IEEE)*
+            }
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[47]
+            {
+                addr:  0x48047118
+                alias: "Out1"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+        endgroup
+
+        group "Triggered\nSubsystem"
+
+            group "Data Store\nWrite"
+            {
+                block: "DataStoreWrite"
+            }
+
+                p_0_LFT_model_Sweep_10_21_25_real_T_0[47]
+                {
+                    addr:  0x48047118
+                    alias: "In1"
+                    flags: READONLY
+                    type:  float(64,IEEE)*
+                }
+
+            endgroup
+
+        endgroup
+
+    endgroup
+
+    group "Accelerometer Acceleration, m//s^2"
+    {
+        block: "Outport"
+    }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[50]
+        {
+            addr:  0x48047118
+            alias: "In1"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "Accelerometer Voltage, V"
+    {
+        block: "Outport"
+    }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[49]
+        {
+            addr:  0x48047118
+            alias: "In1"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "Actuation Force, N"
+    {
+        block: "Outport"
+    }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[5]
+        {
+            addr:  0x48047118
+            alias: "In1"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "AnalogDisplacementLaser, mm"
+    {
+        block: "Outport"
+    }
+
+        p_5_LFT_model_Sweep_10_21_25_real_T_0[21]
+        {
+            addr:  0x48047140
+            alias: "In1"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "Ch1_User input Force Cmd, N"
+    {
+        block: "Outport"
+    }
+
+        p_5_LFT_model_Sweep_10_21_25_real_T_0[5]
+        {
+            addr:  0x48047140
+            alias: "In1"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "Ch2_Pos_LT, mm"
+    {
+        block: "Outport"
+    }
+
+        p_5_LFT_model_Sweep_10_21_25_real_T_0[15]
+        {
+            addr:  0x48047140
+            alias: "In1"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "Ch2_Pos_LT, mm1"
+    {
+        block: "Outport"
+    }
+
+        p_5_LFT_model_Sweep_10_21_25_real_T_0[24]
+        {
+            addr:  0x48047140
+            alias: "In1"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "Ch3_FConstant_LT, N//Amp"
+    {
+        block: "Outport"
+    }
+
+        p_5_LFT_model_Sweep_10_21_25_real_T_0[6]
+        {
+            addr:  0x48047140
+            alias: "In1"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "Current Cmd to LCAM"
+
+    endgroup
+
+    group "Current Saturation "
+    {
+        block: "Saturate"
+    }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[26]
+        {
+            addr:  0x48047118
+            alias: "Out1"
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+        trcref0_Current_Limit
+        {
+            alias:    "Current_Limit.max"
+            refelem:  ".max"
+            refgroup: "/Tunable Parameters"
+            refvar:   "Current_Limit"
+        }
+
+        trcref0_UpperLimit
+        {
+            alias:    "UpperLimit"
+            flags:    DEPRECATED|HIDDEN
+            refelem:  ".max"
+            refgroup: "/Tunable Parameters"
+            refvar:   "Current_Limit"
+        }
+
+    endgroup
+
+    group "Draft Force "
+
+        p_5_LFT_model_Sweep_10_21_25_real_T_0[16]
+        {
+            addr:  0x48047140
+            alias: "FF Current Cmd, A"
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+        group "Divide2"
+        {
+            block: "Product"
+        }
+
+            p_5_LFT_model_Sweep_10_21_25_real_T_0[16]
+            {
+                addr:  0x48047140
+                alias: "Out1"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+        endgroup
+
+        group "Draft_Force_cmd_N"
+        {
+            block: "Constant"
+        }
+
+            p_1_LFT_model_Sweep_10_21_25_real_T_5[11]
+            {
+                addr:  0x48047134
+                alias: "Value"
+                flags: PARAM
+                type:  float(64,IEEE)*
+            }
+
+        endgroup
+
+        group "Lookup - Slope"
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[12]
+            {
+                addr:  0x48047118
+                alias: "Slope (N/amp)"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+            group "Lookup with\nLinear Lagrange\nInterpolation"
+            {
+                block: "Lookup_n-D"
+            }
+
+                p_5_LFT_model_Sweep_10_21_25_real_T_0[24]
+                {
+                    addr:  0x48047140
+                    alias: "In1"
+                    flags: READONLY
+                    type:  float(64,IEEE)*
+                }
+
+                p_0_LFT_model_Sweep_10_21_25_real_T_0[12]
+                {
+                    addr:  0x48047118
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+                trcref1_bp01Data
+                {
+                    alias:    "bp01Data"
+                    refgroup: "/Tunable Parameters"
+                    refvar:   "xData"
+                }
+
+                trcref0_LookUpTableData
+                {
+                    alias:    "LookUpTableData"
+                    refgroup: "/Tunable Parameters"
+                    refvar:   "yData"
+                }
+
+                trcref0_tableData
+                {
+                    alias:    "tableData"
+                    refgroup: "/Tunable Parameters"
+                    refvar:   "yData"
+                }
+
+                trcref1_xData
+                {
+                    alias:    "xData"
+                    refgroup: "/Tunable Parameters"
+                    refvar:   "xData"
+                }
+
+                trcref0_yData
+                {
+                    alias:    "yData"
+                    refgroup: "/Tunable Parameters"
+                    refvar:   "yData"
+                }
+
+            endgroup
+
+        endgroup
+
+        group "Saturation1"
+        {
+            block: "Saturate"
+        }
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[11]
+            {
+                addr:  0x48047118
+                alias: "Out1"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+            trcref0_fIN
+            {
+                alias:    "fIN.Forcemax"
+                refelem:  ".Forcemax"
+                refgroup: "/Tunable Parameters"
+                refvar:   "fIN"
+            }
+
+            trcref0_UpperLimit
+            {
+                alias:    "UpperLimit"
+                flags:    DEPRECATED|HIDDEN
+                refelem:  ".Forcemax"
+                refgroup: "/Tunable Parameters"
+                refvar:   "fIN"
+            }
+
+        endgroup
+
+    endgroup
+
+    group "dSPACE Gain"
+    {
+        block: "Gain"
+    }
+
+        p_1_LFT_model_Sweep_10_21_25_real_T_5[22]
+        {
+            addr:  0x48047134
+            alias: "Gain"
+            flags: PARAM
+            type:  float(64,IEEE)*
+        }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[31]
+        {
+            addr:  0x48047118
+            alias: "Out1"
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "Electric Energy, Joule "
+    {
+        block: "Outport"
+    }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[41]
+        {
+            addr:  0x48047118
+            alias: "In1"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "Feedbackward Current"
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[5]
+        {
+            addr:  0x48047118
+            alias: "Actuation Force, N"
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[28]
+        {
+            addr:  0x48047118
+            alias: "Energy, Joule "
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[8]
+        {
+            addr:  0x48047118
+            alias: "FB Current Cmd, A"
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[29]
+        {
+            addr:  0x48047118
+            alias: "Power, Watt"
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[4]
+        {
+            addr:  0x48047118
+            alias: "Velocity, m/s"
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+        group "Damping Feedback"
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[5]
+            {
+                addr:  0x48047118
+                alias: "Actuation Force, N"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[28]
+            {
+                addr:  0x48047118
+                alias: "Energy, Joule "
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[8]
+            {
+                addr:  0x48047118
+                alias: "FB Current Cmd, A"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[29]
+            {
+                addr:  0x48047118
+                alias: "Power, Watt"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[4]
+            {
+                addr:  0x48047118
+                alias: "Velocity, m/s"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+            group "Divide2"
+            {
+                block: "Product"
+            }
+
+                p_0_LFT_model_Sweep_10_21_25_real_T_0[8]
+                {
+                    addr:  0x48047118
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+            endgroup
+
+            group "Integrator"
+            {
+                block: "Integrator"
+            }
+
+                p_1_LFT_model_Sweep_10_21_25_real_T_5[21]
+                {
+                    addr:  0x48047134
+                    alias: "InitialCondition"
+                    flags: PARAM
+                    type:  float(64,IEEE)*
+                }
+
+                p_0_LFT_model_Sweep_10_21_25_real_T_0[28]
+                {
+                    addr:  0x48047118
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+            endgroup
+
+            group "Kd Gain"
+            {
+                block: "Gain"
+            }
+
+                p_1_LFT_model_Sweep_10_21_25_real_T_5[8]
+                {
+                    addr:  0x48047134
+                    alias: "Gain"
+                    flags: PARAM
+                    type:  float(64,IEEE)*
+                }
+
+                p_0_LFT_model_Sweep_10_21_25_real_T_0[5]
+                {
+                    addr:  0x48047118
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+            endgroup
+
+            group "Lookup table2"
+
+                p_0_LFT_model_Sweep_10_21_25_real_T_0[7]
+                {
+                    addr:  0x48047118
+                    alias: "Slope (N/amp)"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+                group "Lookup with\nLinear Lagrange\nInterpolation"
+                {
+                    block: "Lookup_n-D"
+                }
+
+                    p_5_LFT_model_Sweep_10_21_25_real_T_0[24]
+                    {
+                        addr:  0x48047140
+                        alias: "In1"
+                        flags: READONLY
+                        type:  float(64,IEEE)*
+                    }
+
+                    p_0_LFT_model_Sweep_10_21_25_real_T_0[7]
+                    {
+                        addr:  0x48047118
+                        alias: "Out1"
+                        flags: OUTPUT|READONLY
+                        type:  float(64,IEEE)*
+                    }
+
+                    trcref1_bp01Data
+                    {
+                        alias:    "bp01Data"
+                        refgroup: "/Tunable Parameters"
+                        refvar:   "xData"
+                    }
+
+                    trcref0_LookUpTableData
+                    {
+                        alias:    "LookUpTableData"
+                        refgroup: "/Tunable Parameters"
+                        refvar:   "yData"
+                    }
+
+                    trcref0_tableData
+                    {
+                        alias:    "tableData"
+                        refgroup: "/Tunable Parameters"
+                        refvar:   "yData"
+                    }
+
+                    trcref1_xData
+                    {
+                        alias:    "xData"
+                        refgroup: "/Tunable Parameters"
+                        refvar:   "xData"
+                    }
+
+                    trcref0_yData
+                    {
+                        alias:    "yData"
+                        refgroup: "/Tunable Parameters"
+                        refvar:   "yData"
+                    }
+
+                endgroup
+
+            endgroup
+
+            group "mm to m"
+            {
+                block: "Gain"
+            }
+
+                p_1_LFT_model_Sweep_10_21_25_real_T_5[4]
+                {
+                    addr:  0x48047134
+                    alias: "Gain"
+                    flags: PARAM
+                    type:  float(64,IEEE)*
+                }
+
+                p_0_LFT_model_Sweep_10_21_25_real_T_0[3]
+                {
+                    addr:  0x48047118
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+            endgroup
+
+            group "Multiply"
+            {
+                block: "Product"
+            }
+
+                p_0_LFT_model_Sweep_10_21_25_real_T_0[29]
+                {
+                    addr:  0x48047118
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+            endgroup
+
+            group "Saturation1"
+            {
+                block: "Saturate"
+            }
+
+                p_0_LFT_model_Sweep_10_21_25_real_T_0[6]
+                {
+                    addr:  0x48047118
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+                trcref0_fIN
+                {
+                    alias:    "fIN.Forcemax"
+                    refelem:  ".Forcemax"
+                    refgroup: "/Tunable Parameters"
+                    refvar:   "fIN"
+                }
+
+                trcref0_UpperLimit
+                {
+                    alias:    "UpperLimit"
+                    flags:    DEPRECATED|HIDDEN
+                    refelem:  ".Forcemax"
+                    refgroup: "/Tunable Parameters"
+                    refvar:   "fIN"
+                }
+
+            endgroup
+
+            group "Transfer Fcn"
+            {
+                block: "TransferFcn"
+            }
+
+                p_1_LFT_model_Sweep_10_21_25_real_T_5[5]
+                {
+                    addr:  0x48047134
+                    alias: "A"
+                    flags: PARAM
+                    type:  float(64,IEEE)*
+                }
+
+                p_1_LFT_model_Sweep_10_21_25_real_T_5[6]
+                {
+                    addr:  0x48047134
+                    alias: "C"
+                    flags: PARAM
+                    type:  float(64,IEEE)*
+                }
+
+                p_1_LFT_model_Sweep_10_21_25_real_T_5[7]
+                {
+                    addr:  0x48047134
+                    alias: "D"
+                    flags: PARAM
+                    type:  float(64,IEEE)*
+                }
+
+                p_0_LFT_model_Sweep_10_21_25_real_T_0[4]
+                {
+                    addr:  0x48047118
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+            endgroup
+
+        endgroup
+
+    endgroup
+
+    group "Feedforward"
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[0]
+        {
+            addr:  0x48047118
+            alias: "Smoothed Current Cmd, A"
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+        group "Constant"
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[0]
+            {
+                addr:  0x48047118
+                alias: "Smoothed Current Cmd, A"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+            group "Current Cmd, A"
+            {
+                block: "Gain"
+            }
+
+                p_1_LFT_model_Sweep_10_21_25_real_T_5[26]
+                {
+                    addr:  0x48047134
+                    alias: "Gain"
+                    flags: PARAM
+                    type:  float(64,IEEE)*
+                }
+
+                p_0_LFT_model_Sweep_10_21_25_real_T_0[34]
+                {
+                    addr:  0x48047118
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+            endgroup
+
+            group "smoother"
+            {
+                block: "TransferFcn"
+            }
+
+                p_1_LFT_model_Sweep_10_21_25_real_T_5[27]
+                {
+                    addr:  0x48047134
+                    alias: "A"
+                    flags: PARAM
+                    type:  float(64,IEEE)*
+                }
+
+                p_1_LFT_model_Sweep_10_21_25_real_T_5[28]
+                {
+                    addr:  0x48047134
+                    alias: "C"
+                    flags: PARAM
+                    type:  float(64,IEEE)*
+                }
+
+                p_0_LFT_model_Sweep_10_21_25_real_T_0[35]
+                {
+                    addr:  0x48047118
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+            endgroup
+
+            group "smoother1"
+            {
+                block: "TransferFcn"
+            }
+
+                p_1_LFT_model_Sweep_10_21_25_real_T_5[0]
+                {
+                    addr:  0x48047134
+                    alias: "A"
+                    flags: PARAM
+                    type:  float(64,IEEE)*
+                }
+
+                p_1_LFT_model_Sweep_10_21_25_real_T_5[1]
+                {
+                    addr:  0x48047134
+                    alias: "C"
+                    flags: PARAM
+                    type:  float(64,IEEE)*
+                }
+
+                p_0_LFT_model_Sweep_10_21_25_real_T_0[0]
+                {
+                    addr:  0x48047118
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+            endgroup
+
+        endgroup
+
+    endgroup
+
+    group "Git Test"
+    {
+        block: "Constant"
+    }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[52]
+        {
+            addr:  0x48047118
+            alias: "Out1"
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+        p_1_LFT_model_Sweep_10_21_25_real_T_5[41]
+        {
+            addr:  0x48047134
+            alias: "Value"
+            flags: PARAM
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "Inverse LCAM Gain\n(V//A)"
+    {
+        block: "Gain"
+    }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[30]
+        {
+            addr:  0x48047118
+            alias: "Out1"
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+        trcref0_lcam
+        {
+            alias:    "lcam.gain"
+            refelem:  ".gain"
+            refgroup: "/Tunable Parameters"
+            refvar:   "lcam"
+        }
+
+    endgroup
+
+    group "Laser Sensor"
+
+        p_5_LFT_model_Sweep_10_21_25_real_T_0[21]
+        {
+            addr:  0x48047140
+            alias: "AnalogDisplacementLaser, mm"
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+        group "dSpace Gain"
+        {
+            block: "Gain"
+        }
+
+            p_1_LFT_model_Sweep_10_21_25_real_T_5[2]
+            {
+                addr:  0x48047134
+                alias: "Gain"
+                flags: PARAM
+                type:  float(64,IEEE)*
+            }
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[2]
+            {
+                addr:  0x48047118
+                alias: "Out1"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+        endgroup
+
+        group "Laser Sensor"
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[1]
+            {
+                addr:  0x48047118
+                alias: "ADC"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+        endgroup
+
+        group "Voltage Map"
+        {
+            block: "Gain"
+        }
+
+            p_1_LFT_model_Sweep_10_21_25_real_T_5[3]
+            {
+                addr:  0x48047134
+                alias: "Gain"
+                flags: PARAM
+                type:  float(64,IEEE)*
+            }
+
+            p_5_LFT_model_Sweep_10_21_25_real_T_0[21]
+            {
+                addr:  0x48047140
+                alias: "Out1"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+        endgroup
+
+    endgroup
+
+    group "LCAM Current Sense"
+
+        p_5_LFT_model_Sweep_10_21_25_real_T_0[2]
+        {
+            addr:  0x48047140
+            alias: "Measured Current, Amp"
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+        group "Gain"
+        {
+            block: "Gain"
+        }
+
+            p_5_LFT_model_Sweep_10_21_25_real_T_0[2]
+            {
+                addr:  0x48047140
+                alias: "Out1"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+            trcref0_Gain
+            {
+                alias:    "Gain"
+                flags:    DEPRECATED|HIDDEN
+                refelem:  ".v2i"
+                refgroup: "/Tunable Parameters"
+                refvar:   "lcam"
+            }
+
+            trcref0_lcam
+            {
+                alias:    "lcam.v2i"
+                refelem:  ".v2i"
+                refgroup: "/Tunable Parameters"
+                refvar:   "lcam"
+            }
+
+        endgroup
+
+        group "LCAM Current Sense"
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[37]
+            {
+                addr:  0x48047118
+                alias: "ADC"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+        endgroup
+
+        group "LCAM Current Sense, v"
+        {
+            block: "Gain"
+        }
+
+            p_1_LFT_model_Sweep_10_21_25_real_T_5[29]
+            {
+                addr:  0x48047134
+                alias: "Gain"
+                flags: PARAM
+                type:  float(64,IEEE)*
+            }
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[38]
+            {
+                addr:  0x48047118
+                alias: "Out1"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+        endgroup
+
+    endgroup
+
+    group "Load Cell"
+
+        p_5_LFT_model_Sweep_10_21_25_real_T_0[3]
+        {
+            addr:  0x48047140
+            alias: "Measured Force, N"
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+        group "Add"
+        {
+            block: "Sum"
+        }
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[45]
+            {
+                addr:  0x48047118
+                alias: "Out1"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+        endgroup
+
+        group "Constant"
+        {
+            block: "Constant"
+        }
+
+            trcref0_lc
+            {
+                alias:    "lc.b"
+                refelem:  ".b"
+                refgroup: "/Tunable Parameters"
+                refvar:   "lc"
+            }
+
+            trcref0_Value
+            {
+                alias:    "Value"
+                flags:    DEPRECATED|HIDDEN
+                refelem:  ".b"
+                refgroup: "/Tunable Parameters"
+                refvar:   "lc"
+            }
+
+        endgroup
+
+        group "Gain"
+        {
+            block: "Gain"
+        }
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[44]
+            {
+                addr:  0x48047118
+                alias: "Out1"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+            trcref0_Gain
+            {
+                alias:    "Gain"
+                flags:    DEPRECATED|HIDDEN
+                refelem:  ".k"
+                refgroup: "/Tunable Parameters"
+                refvar:   "lc"
+            }
+
+            trcref0_lc
+            {
+                alias:    "lc.k"
+                refelem:  ".k"
+                refgroup: "/Tunable Parameters"
+                refvar:   "lc"
+            }
+
+        endgroup
+
+        group "Gain1"
+        {
+            block: "Gain"
+        }
+
+            p_5_LFT_model_Sweep_10_21_25_real_T_0[3]
+            {
+                addr:  0x48047140
+                alias: "Out1"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+            trcref0_Gain
+            {
+                alias:    "Gain"
+                flags:    DEPRECATED|HIDDEN
+                refelem:  ".s"
+                refgroup: "/Tunable Parameters"
+                refvar:   "lc"
+            }
+
+            trcref0_lc
+            {
+                alias:    "lc.s"
+                refelem:  ".s"
+                refgroup: "/Tunable Parameters"
+                refvar:   "lc"
+            }
+
+        endgroup
+
+        group "LC, v"
+        {
+            block: "Gain"
+        }
+
+            p_1_LFT_model_Sweep_10_21_25_real_T_5[33]
+            {
+                addr:  0x48047134
+                alias: "Gain"
+                flags: PARAM
+                type:  float(64,IEEE)*
+            }
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[43]
+            {
+                addr:  0x48047118
+                alias: "Out1"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+        endgroup
+
+        group "Load Cell Voltage"
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[42]
+            {
+                addr:  0x48047118
+                alias: "ADC"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+        endgroup
+
+    endgroup
+
+    group "Magnetic field cancellation"
+
+        p_5_LFT_model_Sweep_10_21_25_real_T_0[17]
+        {
+            addr:  0x48047140
+            alias: "FF Current Cmd, A"
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+        p_5_LFT_model_Sweep_10_21_25_real_T_0[18]
+        {
+            addr:  0x48047140
+            alias: "MCh_Mag Force cmd, N"
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+        group "Divide2"
+        {
+            block: "Product"
+        }
+
+            p_5_LFT_model_Sweep_10_21_25_real_T_0[17]
+            {
+                addr:  0x48047140
+                alias: "Out1"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+        endgroup
+
+        group "Look up-Meg"
+
+            p_5_LFT_model_Sweep_10_21_25_real_T_0[18]
+            {
+                addr:  0x48047140
+                alias: "Force meg, N"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+            group "Lookup with\nLinear Lagrange\nInterpolation1"
+            {
+                block: "Lookup_n-D"
+            }
+
+                p_5_LFT_model_Sweep_10_21_25_real_T_0[24]
+                {
+                    addr:  0x48047140
+                    alias: "In1"
+                    flags: READONLY
+                    type:  float(64,IEEE)*
+                }
+
+                p_5_LFT_model_Sweep_10_21_25_real_T_0[18]
+                {
+                    addr:  0x48047140
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+                trcref1_bp01Data
+                {
+                    alias:    "bp01Data"
+                    refgroup: "/Tunable Parameters"
+                    refvar:   "Mag_xData"
+                }
+
+                trcref0_LookUpTableData
+                {
+                    alias:    "LookUpTableData"
+                    refgroup: "/Tunable Parameters"
+                    refvar:   "Mag_yData"
+                }
+
+                trcref1_Mag_xData
+                {
+                    alias:    "Mag_xData"
+                    refgroup: "/Tunable Parameters"
+                    refvar:   "Mag_xData"
+                }
+
+                trcref0_Mag_yData
+                {
+                    alias:    "Mag_yData"
+                    refgroup: "/Tunable Parameters"
+                    refvar:   "Mag_yData"
+                }
+
+                trcref0_tableData
+                {
+                    alias:    "tableData"
+                    refgroup: "/Tunable Parameters"
+                    refvar:   "Mag_yData"
+                }
+
+            endgroup
+
+        endgroup
+
+        group "Lookup - Slope"
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[15]
+            {
+                addr:  0x48047118
+                alias: "Slope (N/amp)"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+            group "Lookup with\nLinear Lagrange\nInterpolation"
+            {
+                block: "Lookup_n-D"
+            }
+
+                p_5_LFT_model_Sweep_10_21_25_real_T_0[24]
+                {
+                    addr:  0x48047140
+                    alias: "In1"
+                    flags: READONLY
+                    type:  float(64,IEEE)*
+                }
+
+                p_0_LFT_model_Sweep_10_21_25_real_T_0[15]
+                {
+                    addr:  0x48047118
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+                trcref1_bp01Data
+                {
+                    alias:    "bp01Data"
+                    refgroup: "/Tunable Parameters"
+                    refvar:   "xData"
+                }
+
+                trcref0_LookUpTableData
+                {
+                    alias:    "LookUpTableData"
+                    refgroup: "/Tunable Parameters"
+                    refvar:   "yData"
+                }
+
+                trcref0_tableData
+                {
+                    alias:    "tableData"
+                    refgroup: "/Tunable Parameters"
+                    refvar:   "yData"
+                }
+
+                trcref1_xData
+                {
+                    alias:    "xData"
+                    refgroup: "/Tunable Parameters"
+                    refvar:   "xData"
+                }
+
+                trcref0_yData
+                {
+                    alias:    "yData"
+                    refgroup: "/Tunable Parameters"
+                    refvar:   "yData"
+                }
+
+            endgroup
+
+        endgroup
+
+        group "Saturation1"
+        {
+            block: "Saturate"
+        }
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[14]
+            {
+                addr:  0x48047118
+                alias: "Out1"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+            trcref0_fIN
+            {
+                alias:    "fIN.Forcemax"
+                refelem:  ".Forcemax"
+                refgroup: "/Tunable Parameters"
+                refvar:   "fIN"
+            }
+
+            trcref0_UpperLimit
+            {
+                alias:    "UpperLimit"
+                flags:    DEPRECATED|HIDDEN
+                refelem:  ".Forcemax"
+                refgroup: "/Tunable Parameters"
+                refvar:   "fIN"
+            }
+
+        endgroup
+
+    endgroup
+
+    group "MCh_Draft Force cmd, A"
+    {
+        block: "Outport"
+    }
+
+        p_5_LFT_model_Sweep_10_21_25_real_T_0[16]
+        {
+            addr:  0x48047140
+            alias: "In1"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "MCh_FB Current Cmd, A"
+    {
+        block: "Outport"
+    }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[8]
+        {
+            addr:  0x48047118
+            alias: "In1"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "MCh_FF Current Cmd, A"
+    {
+        block: "Outport"
+    }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[0]
+        {
+            addr:  0x48047118
+            alias: "In1"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "MCh_LCAM Current, A"
+    {
+        block: "Outport"
+    }
+
+        p_5_LFT_model_Sweep_10_21_25_real_T_0[2]
+        {
+            addr:  0x48047140
+            alias: "In1"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "MCh_Load Cell Force, N"
+    {
+        block: "Outport"
+    }
+
+        p_5_LFT_model_Sweep_10_21_25_real_T_0[3]
+        {
+            addr:  0x48047140
+            alias: "In1"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "MCh_MagCurCmd, A"
+    {
+        block: "Outport"
+    }
+
+        p_5_LFT_model_Sweep_10_21_25_real_T_0[17]
+        {
+            addr:  0x48047140
+            alias: "In1"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "MCh_MagForceCmd, N"
+    {
+        block: "Outport"
+    }
+
+        p_5_LFT_model_Sweep_10_21_25_real_T_0[18]
+        {
+            addr:  0x48047140
+            alias: "In1"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "MCh_Total Current Cmd, A"
+    {
+        block: "Outport"
+    }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[27]
+        {
+            addr:  0x48047118
+            alias: "In1"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "MCh_Total Voltage Cmd, V"
+    {
+        block: "Outport"
+    }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[31]
+        {
+            addr:  0x48047118
+            alias: "In1"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "Measured VC, Volt "
+    {
+        block: "Outport"
+    }
+
+        p_5_LFT_model_Sweep_10_21_25_real_T_0[9]
+        {
+            addr:  0x48047140
+            alias: "In1"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "Mec Energy, Joule"
+    {
+        block: "Outport"
+    }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[28]
+        {
+            addr:  0x48047118
+            alias: "In1"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "Position Saturation "
+    {
+        block: "Saturate"
+    }
+
+        p_5_LFT_model_Sweep_10_21_25_real_T_0[24]
+        {
+            addr:  0x48047140
+            alias: "Out1"
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+        trcref2_LowerLimit
+        {
+            alias:    "LowerLimit"
+            flags:    DEPRECATED|HIDDEN
+            refgroup: "/Tunable Parameters"
+            refvar:   "z_TDC"
+        }
+
+        trcref0_z_stroke
+        {
+            alias:    "z_stroke"
+            refgroup: "/Tunable Parameters"
+            refvar:   "z_stroke"
+        }
+
+        trcref1_z_TDC
+        {
+            alias:    "z_TDC"
+            refgroup: "/Tunable Parameters"
+            refvar:   "z_TDC"
+        }
+
+    endgroup
+
+    group "Power, Watt"
+    {
+        block: "Outport"
+    }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[29]
+        {
+            addr:  0x48047118
+            alias: "In1"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "Record"
+    {
+        block: "Constant"
+    }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[53]
+        {
+            addr:  0x48047118
+            alias: "Out1"
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+        p_1_LFT_model_Sweep_10_21_25_real_T_5[42]
+        {
+            addr:  0x48047134
+            alias: "Value"
+            flags: PARAM
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "RTI Data"
+
+    endgroup
+
+    group "Run Time"
+    {
+        block: "Clock"
+    }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[36]
+        {
+            addr:  0x48047118
+            alias: "Out1"
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "Start Test"
+    {
+        block: "Constant"
+    }
+
+        p_1_LFT_model_Sweep_10_21_25_real_T_5[23]
+        {
+            addr:  0x48047134
+            alias: "Value"
+            flags: PARAM
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "Subsystem"
+
+        p_5_LFT_model_Sweep_10_21_25_real_T_0[11]
+        {
+            addr:  0x48047140
+            alias: " Electric Power, Watt"
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[41]
+        {
+            addr:  0x48047118
+            alias: "Electric Energy, Joule "
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+        group "Divide"
+        {
+            block: "Product"
+        }
+
+            p_5_LFT_model_Sweep_10_21_25_real_T_0[11]
+            {
+                addr:  0x48047140
+                alias: "Out1"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+        endgroup
+
+        group "Integrator"
+        {
+            block: "Integrator"
+        }
+
+            p_1_LFT_model_Sweep_10_21_25_real_T_5[32]
+            {
+                addr:  0x48047134
+                alias: "InitialCondition"
+                flags: PARAM
+                type:  float(64,IEEE)*
+            }
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[41]
+            {
+                addr:  0x48047118
+                alias: "Out1"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+        endgroup
+
+    endgroup
+
+    group "Sum Current Cmds"
+    {
+        block: "Sum"
+    }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[25]
+        {
+            addr:  0x48047118
+            alias: "Out1"
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "Supplied Volts,V "
+    {
+        block: "Outport"
+    }
+
+        p_5_LFT_model_Sweep_10_21_25_real_T_0[22]
+        {
+            addr:  0x48047140
+            alias: "In1"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "Sweep Force Cmd"
+    {
+        block: "Outport"
+    }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[54]
+        {
+            addr:  0x48047118
+            alias: "In1"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "Sweep Test"
+
+        p_5_LFT_model_Sweep_10_21_25_real_T_0[24]
+        {
+            addr:  0x48047140
+            alias: "Ch2_Pos_LT, mm1"
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[23]
+        {
+            addr:  0x48047118
+            alias: "Current, A"
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[54]
+        {
+            addr:  0x48047118
+            alias: "Sweep Force Cmd"
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+        group "Clock"
+        {
+            block: "Clock"
+        }
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[17]
+            {
+                addr:  0x48047118
+                alias: "Out1"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+        endgroup
+
+        group "MATLAB Function"
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[55]
+            {
+                addr:  0x48047118
+                alias: "x1"
+                flags: OUTPUT|READONLY
+                type:  LFT_model_Sweep_10_21_25_ArrayDT0_3*
+            }
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[54]
+            {
+                addr:  0x48047118
+                alias: "y"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+            trcref0_cycles
+            {
+                alias:    "cycles"
+                refgroup: "/Tunable Parameters"
+                refvar:   "cycles"
+            }
+
+            trcref1_freqs
+            {
+                alias:    "freqs"
+                refgroup: "/Tunable Parameters"
+                refvar:   "freqs"
+            }
+
+        endgroup
+
+        group "Subsystem1"
+
+            p_5_LFT_model_Sweep_10_21_25_real_T_0[24]
+            {
+                addr:  0x48047140
+                alias: "Ch2_Pos_LT, mm1"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[23]
+            {
+                addr:  0x48047118
+                alias: "Current, A"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[54]
+            {
+                addr:  0x48047118
+                alias: "Sweep Force Cmd, N"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+            group "Divide2"
+            {
+                block: "Product"
+            }
+
+                p_0_LFT_model_Sweep_10_21_25_real_T_0[23]
+                {
+                    addr:  0x48047118
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+            endgroup
+
+            group "Lookup table2"
+
+                p_0_LFT_model_Sweep_10_21_25_real_T_0[22]
+                {
+                    addr:  0x48047118
+                    alias: "Slope (N/amp)"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+                group "Lookup with\nLinear Lagrange\nInterpolation"
+                {
+                    block: "Lookup_n-D"
+                }
+
+                    p_5_LFT_model_Sweep_10_21_25_real_T_0[24]
+                    {
+                        addr:  0x48047140
+                        alias: "In1"
+                        flags: READONLY
+                        type:  float(64,IEEE)*
+                    }
+
+                    p_0_LFT_model_Sweep_10_21_25_real_T_0[22]
+                    {
+                        addr:  0x48047118
+                        alias: "Out1"
+                        flags: OUTPUT|READONLY
+                        type:  float(64,IEEE)*
+                    }
+
+                    trcref1_bp01Data
+                    {
+                        alias:    "bp01Data"
+                        refgroup: "/Tunable Parameters"
+                        refvar:   "xData"
+                    }
+
+                    trcref0_LookUpTableData
+                    {
+                        alias:    "LookUpTableData"
+                        refgroup: "/Tunable Parameters"
+                        refvar:   "yData"
+                    }
+
+                    trcref0_tableData
+                    {
+                        alias:    "tableData"
+                        refgroup: "/Tunable Parameters"
+                        refvar:   "yData"
+                    }
+
+                    trcref1_xData
+                    {
+                        alias:    "xData"
+                        refgroup: "/Tunable Parameters"
+                        refvar:   "xData"
+                    }
+
+                    trcref0_yData
+                    {
+                        alias:    "yData"
+                        refgroup: "/Tunable Parameters"
+                        refvar:   "yData"
+                    }
+
+                endgroup
+
+            endgroup
+
+            group "Saturation1"
+            {
+                block: "Saturate"
+            }
+
+                p_0_LFT_model_Sweep_10_21_25_real_T_0[21]
+                {
+                    addr:  0x48047118
+                    alias: "Out1"
+                    flags: OUTPUT|READONLY
+                    type:  float(64,IEEE)*
+                }
+
+                trcref0_fIN
+                {
+                    alias:    "fIN.Forcemax"
+                    refelem:  ".Forcemax"
+                    refgroup: "/Tunable Parameters"
+                    refvar:   "fIN"
+                }
+
+                trcref0_UpperLimit
+                {
+                    alias:    "UpperLimit"
+                    flags:    DEPRECATED|HIDDEN
+                    refelem:  ".Forcemax"
+                    refgroup: "/Tunable Parameters"
+                    refvar:   "fIN"
+                }
+
+            endgroup
+
+        endgroup
+
+        group "Sweep eStop"
+        {
+            block: "Constant"
+        }
+
+            p_1_LFT_model_Sweep_10_21_25_real_T_5[14]
+            {
+                addr:  0x48047134
+                alias: "Value"
+                flags: PARAM
+                type:  float(64,IEEE)*
+            }
+
+        endgroup
+
+        group "Sweep Start"
+        {
+            block: "Constant"
+        }
+
+            p_1_LFT_model_Sweep_10_21_25_real_T_5[15]
+            {
+                addr:  0x48047134
+                alias: "Value"
+                flags: PARAM
+                type:  float(64,IEEE)*
+            }
+
+        endgroup
+
+        group "Unit Delay"
+        {
+            block: "UnitDelay"
+        }
+
+            p_1_LFT_model_Sweep_10_21_25_real_T_5[16]
+            {
+                addr:  0x48047134
+                alias: "InitialCondition"
+                flags: PARAM
+                type:  LFT_model_Sweep_10_21_25_ArrayDT0_3*
+            }
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[18]
+            {
+                addr:  0x48047118
+                alias: "Out1"
+                flags: OUTPUT|READONLY
+                type:  LFT_model_Sweep_10_21_25_ArrayDT0_3*
+            }
+
+        endgroup
+
+    endgroup
+
+    group "Trans current  Sense1"
+
+        p_5_LFT_model_Sweep_10_21_25_real_T_0[20]
+        {
+            addr:  0x48047140
+            alias: "Transducer, Current "
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+        p_5_LFT_model_Sweep_10_21_25_real_T_0[19]
+        {
+            addr:  0x48047140
+            alias: "Transducer, Volt "
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+        group "dSPACE Gain"
+        {
+            block: "Gain"
+        }
+
+            p_1_LFT_model_Sweep_10_21_25_real_T_5[34]
+            {
+                addr:  0x48047134
+                alias: "Gain"
+                flags: PARAM
+                type:  float(64,IEEE)*
+            }
+
+            p_5_LFT_model_Sweep_10_21_25_real_T_0[19]
+            {
+                addr:  0x48047140
+                alias: "Out1"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+        endgroup
+
+        group "Transducer gain for current "
+        {
+            block: "Gain"
+        }
+
+            p_1_LFT_model_Sweep_10_21_25_real_T_5[35]
+            {
+                addr:  0x48047134
+                alias: "Gain"
+                flags: PARAM
+                type:  float(64,IEEE)*
+            }
+
+            p_5_LFT_model_Sweep_10_21_25_real_T_0[20]
+            {
+                addr:  0x48047140
+                alias: "Out1"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+        endgroup
+
+        group "Transducer Voltage"
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[46]
+            {
+                addr:  0x48047118
+                alias: "ADC"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+        endgroup
+
+    endgroup
+
+    group "Trans Current VC, Amp"
+    {
+        block: "Outport"
+    }
+
+        p_5_LFT_model_Sweep_10_21_25_real_T_0[20]
+        {
+            addr:  0x48047140
+            alias: "In1"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "Trans Measured VC, Volt "
+    {
+        block: "Outport"
+    }
+
+        p_5_LFT_model_Sweep_10_21_25_real_T_0[19]
+        {
+            addr:  0x48047140
+            alias: "In1"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "Trigger"
+
+        group "DIO Trigger Paddles"
+
+        endgroup
+
+        group "DIO Trigger Qualisys"
+
+        endgroup
+
+        group "Trigger Qualisys"
+        {
+            block: "DataTypeConversion"
+        }
+
+            p_0_LFT_model_Sweep_10_21_25_boolean_T_1[1]
+            {
+                addr:    0x4804711c
+                alias:   "Out1"
+                bitmask: 0x1
+                flags:   OUTPUT|READONLY
+                range:   < 0 ; 1 >
+                type:    uint(8)*
+            }
+
+        endgroup
+
+        group "Trigger Wavemaker"
+        {
+            block: "DataTypeConversion"
+        }
+
+            p_0_LFT_model_Sweep_10_21_25_boolean_T_1[0]
+            {
+                addr:    0x4804711c
+                alias:   "Out1"
+                bitmask: 0x1
+                flags:   OUTPUT|READONLY
+                range:   < 0 ; 1 >
+                type:    uint(8)*
+            }
+
+        endgroup
+
+        group "Use Qualisys"
+        {
+            block: "Gain"
+        }
+
+            p_1_LFT_model_Sweep_10_21_25_real_T_5[25]
+            {
+                addr:  0x48047134
+                alias: "Gain"
+                flags: PARAM
+                type:  float(64,IEEE)*
+            }
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[33]
+            {
+                addr:  0x48047118
+                alias: "Out1"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+        endgroup
+
+        group "Use Wavemaker"
+        {
+            block: "Gain"
+        }
+
+            p_1_LFT_model_Sweep_10_21_25_real_T_5[24]
+            {
+                addr:  0x48047134
+                alias: "Gain"
+                flags: PARAM
+                type:  float(64,IEEE)*
+            }
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[32]
+            {
+                addr:  0x48047118
+                alias: "Out1"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+        endgroup
+
+    endgroup
+
+    group "Use LFW\n(GUI switch)"
+    {
+        block: "Gain"
+    }
+
+        p_1_LFT_model_Sweep_10_21_25_real_T_5[20]
+        {
+            addr:  0x48047134
+            alias: "Gain"
+            flags: PARAM
+            type:  float(64,IEEE)*
+        }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[27]
+        {
+            addr:  0x48047118
+            alias: "Out1"
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+    group "VC Voltage Sense"
+
+        p_5_LFT_model_Sweep_10_21_25_real_T_0[9]
+        {
+            addr:  0x48047140
+            alias: "Measured VC, Volt "
+            flags: OUTPUT|READONLY
+            type:  float(64,IEEE)*
+        }
+
+        group "dSPACE Gain"
+        {
+            block: "Gain"
+        }
+
+            p_1_LFT_model_Sweep_10_21_25_real_T_5[30]
+            {
+                addr:  0x48047134
+                alias: "Gain"
+                flags: PARAM
+                type:  float(64,IEEE)*
+            }
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[40]
+            {
+                addr:  0x48047118
+                alias: "Out1"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+        endgroup
+
+        group "Gain"
+        {
+            block: "Gain"
+        }
+
+            p_1_LFT_model_Sweep_10_21_25_real_T_5[31]
+            {
+                addr:  0x48047134
+                alias: "Gain"
+                flags: PARAM
+                type:  float(64,IEEE)*
+            }
+
+            p_5_LFT_model_Sweep_10_21_25_real_T_0[9]
+            {
+                addr:  0x48047140
+                alias: "Out1"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+        endgroup
+
+        group "VC Voltage"
+
+            p_0_LFT_model_Sweep_10_21_25_real_T_0[39]
+            {
+                addr:  0x48047118
+                alias: "ADC"
+                flags: OUTPUT|READONLY
+                type:  float(64,IEEE)*
+            }
+
+        endgroup
+
+    endgroup
+
+    group "Velocity, m//s"
+    {
+        block: "Outport"
+    }
+
+        p_0_LFT_model_Sweep_10_21_25_real_T_0[4]
+        {
+            addr:  0x48047118
+            alias: "In1"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+endgroup
+
+group "RTT Dynamic Variables"
+
+endgroup
+
+group "State Machine Data"
+
+endgroup
+
+group "Task Info"
+
+    group "Timer Task 1"
+
+        pRti_TIMERA_OType
+        {
+            addr:  0x4804718c
+            alias: "overrunCheckType"
+            flags: READONLY
+            type:  int(32)*
+        }
+
+        pRti_TIMERA_OCnt
+        {
+            addr:  0x48047198
+            alias: "overrunCount"
+            flags: READONLY
+            type:  int(32)*
+        }
+
+        pRti_TIMERA_ORpt
+        {
+            addr:  0x48047194
+            alias: "overrunQueueCount"
+            flags: READONLY
+            type:  int(32)*
+        }
+
+        pRti_TIMERA_OMax
+        {
+            addr:  0x48047190
+            alias: "overrunQueueMax"
+            flags: READONLY
+            type:  int(32)*
+        }
+
+        pRti_TIMERA_Prio
+        {
+            addr:  0x480471a0
+            alias: "priority"
+            flags: READONLY
+            type:  int(32)*
+        }
+
+        pRti_TIMERA_STime
+        {
+            addr:  0x48047180
+            alias: "sampleTime"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+        pRti_TIMERA_TState
+        {
+            addr:  0x48047188
+            alias: "state"
+            flags: READONLY
+            type:  int(32)*
+        }
+
+        pRti_TIMERA_TCnt
+        {
+            addr:  0x4804719c
+            alias: "taskCallCount"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+        pRti_TIMERA_TTime
+        {
+            addr:  0x48047184
+            alias: "turnaroundTime"
+            flags: READONLY
+            type:  float(64,IEEE)*
+        }
+
+    endgroup
+
+endgroup
+
+group "Tunable Parameters"
+
+    p_1_LFT_model_Sweep_10_21_25_struct_KSr0ZktrmB6JvprMbx5LQF_4[0]
+    {
+        addr:  0x48047130
+        alias: "Current_Limit"
+        flags: PARAM
+        type:  struct LFT_model_Sweep_10_21_25_struct_KSr0ZktrmB6JvprMbx5LQF*
+    }
+
+    p_1_LFT_model_Sweep_10_21_25_real_T_3[34]
+    {
+        addr:  0x4804712c
+        alias: "cycles"
+        flags: PARAM
+        type:  LFT_model_Sweep_10_21_25_ArrayDT0_30*
+    }
+
+    p_1_LFT_model_Sweep_10_21_25_struct_pHyZfrOdFMVsG1RQl0JmND_1[0]
+    {
+        addr:  0x48047124
+        alias: "fIN"
+        flags: PARAM
+        type:  struct LFT_model_Sweep_10_21_25_struct_pHyZfrOdFMVsG1RQl0JmND*
+    }
+
+    p_1_LFT_model_Sweep_10_21_25_real_T_3[64]
+    {
+        addr:  0x4804712c
+        alias: "freqs"
+        flags: PARAM
+        type:  LFT_model_Sweep_10_21_25_ArrayDT0_30*
+    }
+
+    p_1_LFT_model_Sweep_10_21_25_struct_NLRDuVWYR7htA7PonmziCF_0[0]
+    {
+        addr:  0x48047120
+        alias: "lc"
+        flags: PARAM
+        type:  struct LFT_model_Sweep_10_21_25_struct_NLRDuVWYR7htA7PonmziCF*
+    }
+
+    p_1_LFT_model_Sweep_10_21_25_struct_51Gh2Mj8fMlXTwAtgB5ETG_2[0]
+    {
+        addr:  0x48047128
+        alias: "lcam"
+        flags: PARAM
+        type:  struct LFT_model_Sweep_10_21_25_struct_51Gh2Mj8fMlXTwAtgB5ETG*
+    }
+
+    p_1_LFT_model_Sweep_10_21_25_real_T_3[0]
+    {
+        addr:  0x4804712c
+        alias: "Mag_xData"
+        flags: PARAM
+        type:  LFT_model_Sweep_10_21_25_ArrayDT0_17*
+    }
+
+    p_1_LFT_model_Sweep_10_21_25_real_T_3[17]
+    {
+        addr:  0x4804712c
+        alias: "Mag_yData"
+        flags: PARAM
+        type:  LFT_model_Sweep_10_21_25_ArrayDT0_17*
+    }
+
+    p_1_LFT_model_Sweep_10_21_25_real_T_3[94]
+    {
+        addr:  0x4804712c
+        alias: "xData"
+        flags: PARAM
+        type:  LFT_model_Sweep_10_21_25_ArrayDT0_17*
+    }
+
+    p_1_LFT_model_Sweep_10_21_25_real_T_3[111]
+    {
+        addr:  0x4804712c
+        alias: "yData"
+        flags: PARAM
+        type:  LFT_model_Sweep_10_21_25_ArrayDT0_17*
+    }
+
+    p_1_LFT_model_Sweep_10_21_25_real_T_3[129]
+    {
+        addr:  0x4804712c
+        alias: "z_stroke"
+        flags: PARAM
+        type:  float(64,IEEE)*
+    }
+
+    p_1_LFT_model_Sweep_10_21_25_real_T_3[128]
+    {
+        addr:  0x4804712c
+        alias: "z_TDC"
+        flags: PARAM
+        type:  float(64,IEEE)*
+    }
+
+endgroup
+
+group "XIL API"
+
+    group "EESPort"
+
+        p_xilapi_eesport_activeerrorset_uint32_T
+        {
+            addr:  0x480467a4
+            alias: "Active ErrorSet"
+            desc:  "Index of active ErrorSet or 0 if no ErrorSet is active."
+            flags: OUTPUT|READONLY
+            range: < 0 ; 4294967295 >
+            type:  uint(32)*
+        }
+
+        p_xilapi_eesport_erroractivated_uint32_T
+        {
+            addr:  0x480467a0
+            alias: "Error Activated"
+            desc:  "0 - no error is activated on hardware, 1 - at least one error is activated on hardware."
+            flags: OUTPUT|READONLY
+            range: < 0 ; 1 >
+            type:  uint(32)*
+        }
+
+        p_xilapi_eesport_errorswitching_uint32_T
+        {
+            addr:  0x4804679c
+            alias: "Error Switching"
+            desc:  "0 - no switching operation running on hardware, 1 -  switching operation running on hardware."
+            flags: OUTPUT|READONLY
+            range: < 0 ; 1 >
+            type:  uint(32)*
+        }
+
+        xilapi_eesport_flags_uint32_T
+        {
+            addr:  0x480471b0
+            alias: "Flags"
+            flags: OUTPUT|READONLY
+            range: < 0 ; 4294967295 >
+            type:  uint(32)
+        }
+
+        xilapi_eesport_trigger_uint32_T
+        {
+            addr:  0x480471ac
+            alias: "Trigger"
+            flags: OUTPUT|READONLY
+            range: < 0 ; 4294967295 >
+            type:  uint(32)
+        }
+
+    endgroup
+
+endgroup
+
+

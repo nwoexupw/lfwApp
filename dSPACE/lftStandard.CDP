@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Root>
+	<creator type="key">ControlDesk 25.1</creator>
+	<majorversion type="key">25</majorversion>
+	<minorversion type="key">1</minorversion>
+	<maintenanceversion type="key">0</maintenanceversion>
+	<specialbuildversion type="key"/>
+	<releasename type="key">2025-A</releasename>
+	<project>
+		<Creator type="key">ControlDesk</Creator>
+		<MigrationHistory type="key">Migrated to ControlDesk 6.4 7/9/2024 9:22 AM
+Migrated to ControlDesk 7.0 7/9/2024 9:22 AM
+Migrated to ControlDesk 7.1 7/9/2024 9:22 AM
+Migrated to ControlDesk 7.2 7/9/2024 9:22 AM
+Migrated to ControlDesk 7.3 7/9/2024 9:22 AM
+Migrated to ControlDesk 7.4 7/9/2024 9:22 AM
+Migrated to ControlDesk 7.5 7/9/2024 9:22 AM
+Migrated to ControlDesk 7.6 7/9/2024 9:28 AM
+Migrated to ControlDesk 22.2 7/9/2024 9:28 AM
+Migrated to ControlDesk 23.1 7/9/2024 9:28 AM
+Migrated to ControlDesk 23.2 7/9/2024 9:28 AM
+Migrated to ControlDesk 24.1 7/9/2024 9:28 AM
+ControlDesk.exe 24.1.0.1824317
+Migrated to ControlDesk 24.2 9/24/2025 1:45 PM
+Migrated to ControlDesk 25.1 9/24/2025 1:45 PM
+ControlDesk.exe 25.1.0.2465490
+</MigrationHistory>
+		<Name type="key">lftStandard.CDP</Name>
+		<DisplayName type="key">LFT_Dspace</DisplayName>
+		<Flags type="key">4096</Flags>
+		<Type type="key">1</Type>
+		<UniqueID type="key">313937379</UniqueID>
+		<EntityID type="key">{010ACE94-A9C0-4ED3-A0C4-112768A1090A}</EntityID>
+		<ItemInfoDate type="key">3/4/2024 10:08:12 AM</ItemInfoDate>
+		<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+		<ItemInfoDescr type="key"/>
+		<ItemInfoAddInfoDb type="key"/>
+		<ItemInfoAuthor type="key">Lab Computer</ItemInfoAuthor>
+		<item>
+			<Targets type="key">project</Targets>
+			<Name type="key">dSpace</Name>
+			<DisplayName type="key">LFT_Dspace</DisplayName>
+			<Path type="key">..</Path>
+			<Flags type="key">4100</Flags>
+			<Type type="key">3</Type>
+			<UniqueID type="key">706180081</UniqueID>
+			<EntityID type="key">{EE37B620-F35A-40EE-A159-BD8870CCDCEE}</EntityID>
+			<ItemInfoDate type="key">3/4/2024 10:08:12 AM</ItemInfoDate>
+			<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+			<ItemInfoDescr type="key"/>
+			<ItemInfoAddInfoDb type="key"/>
+			<ItemInfoAuthor type="key">Lab Computer</ItemInfoAuthor>
+			<item>
+				<Docs type="key">.doc,.docx,.pdf</Docs>
+				<Name type="key">Specifications</Name>
+				<DisplayName type="key">Specifications</DisplayName>
+				<Path type="key">.</Path>
+				<Type type="key">3</Type>
+				<UniqueID type="key">766941213</UniqueID>
+				<EntityID type="key">{89872507-0E35-4186-A5DF-2EB9DFBB58DA}</EntityID>
+				<ItemInfoDate type="key">3/4/2024 10:08:12 AM</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDocs type="key">.doc,.docx,.pdf</ItemInfoDocs>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">Lab Computer</ItemInfoAuthor>
+			</item>
+			<item>
+				<Docs type="key">.mpp</Docs>
+				<Name type="key">Project Plans</Name>
+				<DisplayName type="key">Project Plans</DisplayName>
+				<Path type="key">.</Path>
+				<Type type="key">3</Type>
+				<UniqueID type="key">342739464</UniqueID>
+				<EntityID type="key">{1BD821C0-A6E2-47BA-85E4-DD2AF57729EE}</EntityID>
+				<ItemInfoDate type="key">3/4/2024 10:08:12 AM</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDocs type="key">.mpp</ItemInfoDocs>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">Lab Computer</ItemInfoAuthor>
+			</item>
+			<item>
+				<Targets type="key">datasetmanager_global</Targets>
+				<Name type="key">Data Sets</Name>
+				<DisplayName type="key">Data Sets</DisplayName>
+				<Path type="key">.</Path>
+				<Flags type="key">260</Flags>
+				<Type type="key">29</Type>
+				<UniqueID type="key">520383301</UniqueID>
+				<EntityID type="key">{F8132CBB-06D6-43BB-BBA0-0A10CF813D99}</EntityID>
+				<ItemInfoDate type="key">3/4/2024 10:08:12 AM</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">Lab Computer</ItemInfoAuthor>
+			</item>
+			<item>
+				<Targets type="key">pythonscriptcomponent</Targets>
+				<Name type="key">Python Scripts</Name>
+				<DisplayName type="key">Python Scripts</DisplayName>
+				<Path type="key">.</Path>
+				<Flags type="key">256</Flags>
+				<ExtendedFlags type="key">4224</ExtendedFlags>
+				<Type type="key">3</Type>
+				<UniqueID type="key">223297832</UniqueID>
+				<EntityID type="key">{AE3DECE4-39B7-41D2-8350-D30BAFDF3B4A}</EntityID>
+				<ItemInfoDate type="key">3/4/2024 10:08:12 AM</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDocs type="key">.py</ItemInfoDocs>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">Lab Computer</ItemInfoAuthor>
+			</item>
+			<item>
+				<Targets type="key">signaleditor</Targets>
+				<Name type="key">Signal Description Sets</Name>
+				<DisplayName type="key">Signal Description Sets</DisplayName>
+				<Path type="key">.</Path>
+				<Flags type="key">256</Flags>
+				<Type type="key">3</Type>
+				<UniqueID type="key">190348245</UniqueID>
+				<EntityID type="key">{C4C1214E-8054-4A30-8604-96B608DC9B56}</EntityID>
+				<ItemInfoDate type="key">3/4/2024 10:08:12 AM</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">Lab Computer</ItemInfoAuthor>
+			</item>
+		</item>
+		<item>
+			<Name type="key">Events</Name>
+			<DisplayName type="key">Events</DisplayName>
+			<Path type="key">.</Path>
+			<Flags type="key">4</Flags>
+			<ExtendedFlags type="key">4</ExtendedFlags>
+			<Type type="key">3</Type>
+			<UniqueID type="key">226655999</UniqueID>
+			<EntityID type="key">{82DD85AB-5582-451A-A0F6-6468DA94E3C1}</EntityID>
+			<ItemInfoDate type="key">3/4/2024 10:08:14 AM</ItemInfoDate>
+			<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+			<ItemInfoDescr type="key"/>
+			<ItemInfoAddInfoDb type="key"/>
+			<ItemInfoAuthor type="key">Lab Computer</ItemInfoAuthor>
+			<item>
+				<Name type="key">Project.events</Name>
+				<DisplayName type="key">Project.events</DisplayName>
+				<Path type="key">.\Events</Path>
+				<Flags type="key">4</Flags>
+				<Type type="key">52</Type>
+				<UniqueID type="key">130868216</UniqueID>
+				<EntityID type="key">{C08FC16B-B177-4F0B-9EE6-F62A8FB3DEBB}</EntityID>
+				<ItemInfoDate type="key">3/4/2024 10:08:14 AM</ItemInfoDate>
+				<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+				<ItemInfoDescr type="key"/>
+				<ItemInfoAddInfoDb type="key"/>
+				<ItemInfoAuthor type="key">Lab Computer</ItemInfoAuthor>
+			</item>
+		</item>
+		<item>
+			<Name type="key">AutomationCustomData.json</Name>
+			<DisplayName type="key">AutomationCustomData.json</DisplayName>
+			<Path type="key">.</Path>
+			<Flags type="key">4</Flags>
+			<Type type="key">4</Type>
+			<UniqueID type="key">93917752</UniqueID>
+			<EntityID type="key">{7576E4CC-FB70-47D2-AA94-604F04DFF330}</EntityID>
+			<ItemInfoDate type="key">7/9/2024 9:22:54 AM</ItemInfoDate>
+			<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+			<ItemInfoDescr type="key"/>
+			<ItemInfoAddInfoDb type="key"/>
+			<ItemInfoAuthor type="key">Lab Computer</ItemInfoAuthor>
+		</item>
+	</project>
+	<experiments>
+		<experiment>
+			<Creator type="key">ControlDesk</Creator>
+			<MigrationHistory type="key">Migrated to ControlDesk 6.4 7/9/2024 9:22 AM
+Migrated to ControlDesk 7.0 7/9/2024 9:22 AM
+Migrated to ControlDesk 7.1 7/9/2024 9:22 AM
+Migrated to ControlDesk 7.2 7/9/2024 9:22 AM
+Migrated to ControlDesk 7.3 7/9/2024 9:22 AM
+Migrated to ControlDesk 7.4 7/9/2024 9:22 AM
+Migrated to ControlDesk 7.5 7/9/2024 9:22 AM
+Migrated to ControlDesk 7.6 7/9/2024 9:28 AM
+Migrated to ControlDesk 22.2 7/9/2024 9:28 AM
+Migrated to ControlDesk 23.1 7/9/2024 9:28 AM
+Migrated to ControlDesk 23.2 7/9/2024 9:28 AM
+Migrated to ControlDesk 24.1 7/9/2024 9:28 AM
+ControlDesk.exe 24.1.0.1824317
+Migrated to ControlDesk 24.2 9/24/2025 1:45 PM
+Migrated to ControlDesk 25.1 9/24/2025 1:45 PM
+ControlDesk.exe 25.1.0.2465490
+</MigrationHistory>
+			<Name type="key">expStandard.CDE</Name>
+			<DisplayName type="key">expStandard</DisplayName>
+			<Path type="key">.\expStandard</Path>
+			<Flags type="key">4096</Flags>
+			<Type type="key">2</Type>
+			<UniqueID type="key">689042454</UniqueID>
+			<EntityID type="key">{840A1D81-4F5F-4BED-8AB5-58DC08CEF68F}</EntityID>
+			<ItemInfoDate type="key">3/4/2024 10:08:12 AM</ItemInfoDate>
+			<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+			<ItemInfoDescr type="key"/>
+			<ItemInfoAddInfoDb type="key"/>
+			<ItemInfoAuthor type="key">Lab Computer</ItemInfoAuthor>
+		</experiment>
+	</experiments>
+	<ProjectExperiment>
+		<LastActiveExperiment type="key">expStandard</LastActiveExperiment>
+	</ProjectExperiment>
+	<DataSetManager>
+		<Version>
+			<Version type="key">2</Version>
+		</Version>
+		<Work/>
+		<ActiveWork/>
+		<Reference/>
+		<ActiveReference/>
+		<Master/>
+		<ActiveMaster/>
+		<InitialMaster/>
+		<Incomplete/>
+		<IncompleteReadonly/>
+		<DataSet/>
+		<Readonly/>
+		<AutomaticDownload/>
+	</DataSetManager>
+	<DiagnosticsManagement/>
+	<Instrumentation Version="1">
+		<UniqueIds Version="3">
+			<Count type="key">2</Count>
+			<File1 type="key">expStandard/Layout Main</File1>
+			<Id1 type="key">2</Id1>
+			<File2 type="key">expStandard/Data Display</File2>
+			<Id2 type="key">4</Id2>
+		</UniqueIds>
+	</Instrumentation>
+	<VariablesManagement/>
+	<MeasureDataManagement/>
+	<MeasurementConfiguration/>
+	<BusNavigator/>
+	<SignalEditor/>
+	<XILAPIEESPort/>
+	<PythonScriptComponent/>
+	<PlatformManagement/>
+	<UserManager/>
+	<Interpreter>
+		<PythonVersion type="key">3.9</PythonVersion>
+	</Interpreter>
+</Root>
